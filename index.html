@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giusy Di Gennaro – Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<img id="cursor" src="puntatore.png" alt="">
+
+<div class="app">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="logo" onclick="goHome()" title="Home">G</div>
+      <span class="topbar-greeting">Ciao, <strong>Giusy!</strong></span>
+    </div>
+
+    <div class="topbar-badge">
+      <span class="badge-label">My portfolio</span>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+    </div>
+
+    <nav class="topbar-actions">
+      <a class="btn btn-ghost" href="digennarogiusycv_04_2026.pdf" download="GiusyDiGennaro_CV.pdf">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Scarica CV
+      </a>
+      <div class="contact-dropdown-wrapper" id="contactWrapper">
+        <button class="btn btn-primary" onclick="toggleContactDropdown(event)">
+          Contattami
+          <svg id="contact-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="contact-dropdown" id="contactDropdown">
+          <a class="contact-dropdown-item" href="https://wa.me/3275322278" target="_blank">
+            <svg viewBox="0 0 24 24" fill="#25D366" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Scrivimi su WhatsApp
+          </a>
+          <a class="contact-dropdown-item" href="mailto:giusydigennaro1999@gmail.com">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#EA4335"/></svg>
+            Scrivimi una Email
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BODY -->
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-item sidebar-item--home active" id="home-btn" onclick="goHome()" data-label="Home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><polyline points="9 21 9 12 15 12 15 21"/></svg>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-item" data-label="Esperienza" onclick="openSection('experience', this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="12.01"/><path d="M2 12.5A20 20 0 0 0 12 15a20 20 0 0 0 10-2.5"/></svg>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-item" data-label="Formazione" onclick="openSection('education', this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-item" data-label="Skills" onclick="openSection('skills', this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main" id="main">
+
+      <!-- HOME -->
+      <div class="home" id="home-view">
+
+        <!-- Photo -->
+        <div class="home-photo">
+          <img src="giusysnio.jpeg" alt="Giusy Di Gennaro" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="home-photo-fallback" style="display:none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="80" height="80"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="home-photo-caption">
+            <div class="home-name">Giusy<br>Patrizia<br>Di Gennaro</div>
+            <div class="home-role">Developer · Content Creator</div>
+          </div>
+        </div>
+
+        <!-- Info panel -->
+        <div class="info-panel">
+
+          <div class="info-header">
+            <div class="info-section-label">Portfolio</div>
+            <div class="tag-row">
+              <span class="tag tag-dev">Software Dev</span>
+              <span class="tag tag-cc">Content Creator</span>
+            </div>
+          </div>
+
+          <div class="info-section">
+            <div class="info-section-label">Contatti</div>
+            <div class="contact-row">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <span class="contact-text">giusydigennaro1999@gmail.com</span>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l1.47-1.47a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+              <span class="contact-text">+39 327 532 2278</span>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <span class="contact-text">Canosa di Puglia (BT)</span>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+              <span class="contact-text">Patente AM / B</span>
+            </div>
+          </div>
+
+          <div class="info-section">
+            <div class="info-section-label">Stats</div>
+            <div class="stats-grid">
+              <div class="stat-card stat-card--dark">
+                <div class="stat-label">Anni tech</div>
+                <div class="stat-value">4+</div>
+                <div class="stat-track"><div class="stat-fill" style="width:80%"></div></div>
+              </div>
+              <div class="stat-card stat-card--light">
+                <div class="stat-label">Linguaggi</div>
+                <div class="stat-value">8</div>
+                <div class="stat-track"><div class="stat-fill" style="width:55%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-section">
+            <div class="info-section-label">Lingue</div>
+            <div class="language-row">
+              <div class="language-meta"><span class="language-name">Italiano</span><span class="language-level">Madrelingua</span></div>
+              <div class="language-dots"><span class="dot dot--on"></span><span class="dot dot--on"></span><span class="dot dot--on"></span><span class="dot dot--on"></span><span class="dot dot--on"></span></div>
+            </div>
+            <div class="language-row">
+              <div class="language-meta"><span class="language-name">Inglese</span><span class="language-level">B1</span></div>
+              <div class="language-dots"><span class="dot dot--on"></span><span class="dot dot--on"></span><span class="dot dot--on"></span><span class="dot dot--off"></span><span class="dot dot--off"></span></div>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- /home -->
+
+      <!-- SECTION VIEW -->
+      <div class="section-view" id="section-view">
+        <div class="section-tabs">
+          <div class="section-tab active" id="tab-experience" onclick="switchTab('experience')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            Esperienza
+          </div>
+          <div class="section-tab" id="tab-education" onclick="switchTab('education')" style="display:none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+            Formazione
+          </div>
+          <div class="section-tab" id="tab-skills" onclick="switchTab('skills')" style="display:none">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Skills
+          </div>
+          <button class="section-close" onclick="goHome()" title="Chiudi (Esc)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+
+        <!-- ESPERIENZA -->
+        <div class="section-body active" id="section-experience">
+          <h2 class="section-title">Esperienza Lavorativa</h2>
+
+          <div class="card">
+            <div class="card-title"><span class="dot-accent"></span>Social Media &amp; Content Manager</div>
+            <div class="card-subtitle">Tony Cars S.r.l · Cerignola</div>
+            <ul class="card-list">
+              <li>Creazione dei Visual (Foto, Grafiche, Video dinamici)</li>
+              <li>Gestione Social</li>
+              <li>Aggiornamenti stock</li>
+            </ul>
+            <div class="card-date">Dicembre 2024 – Marzo 2026</div>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><span class="dot-accent"></span>Stagista Tecnico Audiovisivo</div>
+            <div class="card-subtitle">AncheCinema · Bari</div>
+            <ul class="card-list">
+              <li>Supporto nell'allestimento e smontaggio delle attrezzature audio, video e luci di scena</li>
+              <li>Collaborazione con i tecnici di palco per il posizionamento di microfoni, casse e cablaggi</li>
+              <li>Supporto nella proiezione di contenuti multimediali e nella gestione di scenografie digitali</li>
+              <li>Assistenza generale durante le prove e gli spettacoli</li>
+            </ul>
+            <div class="card-date">Gennaio – Maggio 2024</div>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><span class="dot-accent"></span>Tecnico Riparatore Hardware</div>
+            <div class="card-subtitle">Reset Informatica · Canosa di Puglia</div>
+            <ul class="card-list">
+              <li>Diagnosi e risoluzione di guasti su computer, notebook, stampanti e periferiche</li>
+              <li>Sostituzione e riparazione di componenti hardware (RAM, SSD, schede madri, display, ecc.)</li>
+              <li>Backup e recupero dati da supporti danneggiati</li>
+              <li>Supporto tecnico agli utenti per problemi legati a hardware e periferiche</li>
+            </ul>
+            <div class="card-date">Aprile 2023 – Agosto 2023</div>
+          </div>
+        </div>
+
+        <!-- FORMAZIONE -->
+        <div class="section-body" id="section-education">
+          <h2 class="section-title">Formazione</h2>
+
+          <div class="card">
+            <div class="card-title"><span class="dot-accent"></span>Diploma Tecnico Superiore Sviluppatore Software</div>
+            <div class="card-subtitle">Apulia Digital · Barletta</div>
+            <ul class="card-list">
+              <li>Front-end Development: HTML, CSS, JavaScript, jQuery, AJAX &amp; Angular</li>
+              <li>Programmazione (Python, JavaScript) e gestione database SQL</li>
+              <li>Sviluppo in ambienti Cloud Computing e integrazione di AI</li>
+              <li>Creazione Web/App, gestione server e sicurezza informatica</li>
+              <li>Automazione dei processi e sviluppo di applicazioni intelligenti</li>
+            </ul>
+            <div class="card-date">Dic 2025 – Attuale</div>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><span class="dot-accent"></span>Formazione Completa Programmazione e Sviluppo Software</div>
+            <div class="card-subtitle">Udemy · Online · 60+ ore</div>
+            <ul class="card-list">
+              <li>Corso intensivo su concetti fondamentali di programmazione e sviluppo software</li>
+              <li>Linguaggi e tecnologie: C, C++, Java, Python, JavaScript, C#, PHP, SQL</li>
+              <li>OOP, sviluppo web, gestione database, debug e best practice di coding</li>
+              <li>Certificato di completamento conseguito</li>
+            </ul>
+            <div class="card-date">Attuale</div>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><span class="dot-accent"></span>Workshop CyberWeek – Introduzione al Front-End</div>
+            <div class="card-subtitle">Digitazon · Italia</div>
+            <ul class="card-list">
+              <li>Percorso intensivo sulle basi dello sviluppo web</li>
+              <li>Tecnologie: HTML5, CSS3, JavaScript</li>
+              <li>Concetti fondamentali di responsive design e buone pratiche di programmazione</li>
+            </ul>
+            <div class="card-date">HTML5 · CSS3 · JavaScript</div>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><span class="dot-accent"></span>Diploma Specializzazione Tecnologie Applicate</div>
+            <div class="card-subtitle">Apulia Digital Maker · Foggia</div>
+            <ul class="card-list">
+              <li>Regia, sceneggiatura, fotografia e montaggio</li>
+              <li>Tecniche di live streaming e sound design</li>
+              <li>Color correction ed effetti speciali (VFX)</li>
+              <li>Motion graphic e camera tracking system</li>
+              <li>Realizzazione di scenografie virtuali e allestimenti immersivi</li>
+            </ul>
+            <div class="card-date">Set 2022 – Giu 2024</div>
+          </div>
+
+          <div class="card">
+            <div class="card-title"><span class="dot-accent"></span>Diploma Enogastronomia e Ospitalità Alberghiera</div>
+            <div class="card-subtitle">IISS "L. Einaudi" · Canosa di Puglia</div>
+            <div class="card-date">Set 2013 – Giu 2018</div>
+          </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="section-body" id="section-skills">
+
+          <div class="skills-group">
+            <div class="skills-group-header">
+              <span class="skills-badge skills-badge--dev">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                Developer
+              </span>
+            </div>
+            <div class="skills-cloud">
+              <span class="skill skill--dev"> HTML5 </span>
+              <span class="skill skill--dev"> CSS </span>
+              <span class="skill skill--dev"> JavaScript </span>
+              <span class="skill skill--dev"> Node.js </span>
+              <span class="skill skill--dev"> Angular </span>
+              <span class="skill skill--dev"> Java </span>
+              <span class="skill skill--dev"> Java Enterprice </span>
+              <span class="skill skill--dev"> Spring Boot </span>
+              <span class="skill skill--dev"> C# </span>
+              <span class="skill skill--dev"> .NET </span>
+              <span class="skill skill--dev"> MySQL </span>
+              <span class="skill skill--dev"> Python </span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-group-header">
+              <span class="skills-badge skills-badge--cc">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                Content Creator
+              </span>
+            </div>
+            <div class="skills-cloud">
+              <span class="skill skill--cc">Adobe Photoshop</span>
+              <span class="skill skill--cc">Adobe Premiere</span>
+              <span class="skill skill--cc">After Effects</span>
+              <span class="skill skill--cc">Illustrator</span>
+              <span class="skill skill--cc">DaVinci Resolve</span>
+              <span class="skill skill--cc">Social Media</span>
+              <span class="skill skill--cc">Video Editing</span>
+              <span class="skill skill--cc">Motion Graphic</span>
+              <span class="skill skill--cc">Live Streaming</span>
+              <span class="skill skill--cc">Color Correction</span>
+              <span class="skill skill--cc">VFX</span>
+              <span class="skill skill--cc">Sound Design</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div><!-- /section-view -->
+
+    </main>
+  </div><!-- /layout -->
+
+</div><!-- /app -->
+
+<script>
+/* Custom cursor */
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top  = e.clientY + 'px';
+});
+document.addEventListener('mouseleave', () => cursor.style.opacity = '0');
+document.addEventListener('mouseenter', () => cursor.style.opacity = '1');
+
+/* Contact dropdown */
+function toggleContactDropdown(e) {
+  e.stopPropagation();
+  const dd  = document.getElementById('contactDropdown');
+  const ch  = document.getElementById('contact-chevron');
+  const open = dd.classList.toggle('open');
+  ch.style.transform = open ? 'rotate(180deg)' : '';
+}
+document.addEventListener('click', () => {
+  document.getElementById('contactDropdown').classList.remove('open');
+  document.getElementById('contact-chevron').style.transform = '';
+});
+
+/* Section tabs */
+const TABS = ['experience', 'education', 'skills'];
+
+function openSection(key, navEl) {
+  document.querySelectorAll('.sidebar-item').forEach(n => n.classList.remove('active'));
+  if (navEl) navEl.classList.add('active');
+
+  document.getElementById('home-btn').classList.remove('active');
+  document.getElementById('home-view').classList.add('hidden');
+  document.getElementById('section-view').classList.add('visible');
+
+  TABS.forEach(k => {
+    document.getElementById('tab-' + k).style.display = (k === key) ? 'flex' : 'none';
+  });
+  switchTab(key);
+}
+
+function switchTab(key) {
+  TABS.forEach(k => {
+    document.getElementById('tab-' + k).classList.toggle('active', k === key);
+    document.getElementById('section-' + k).classList.toggle('active', k === key);
+  });
+}
+
+function goHome() {
+  document.querySelectorAll('.sidebar-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('home-btn').classList.add('active');
+  document.getElementById('home-view').classList.remove('hidden');
+  document.getElementById('section-view').classList.remove('visible');
+  TABS.forEach((k, i) => {
+    document.getElementById('tab-' + k).style.display = i === 0 ? 'flex' : 'none';
+  });
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.getElementById('section-view').classList.contains('visible')) goHome();
+});
+</script>
+</body>
+</html>
